@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technet Technologies | Zimbabwe</title>
+  <meta name="description" content="Technet Technologies — software development, AI, app design, school management systems, forex trading tools, and torrenting solutions (lawful use cases) in Zimbabwe." />
+  <meta name="keywords" content="Technet Technologies, Zimbabwe, software development, AI development, application design, school management system, forex trading tools, torrenting solutions, Techboy" />
+  <meta name="author" content="Technet Technologies" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14; /* deep slate */
+      --panel:#121923; /* card bg */
+      --muted:#9fb0c3;
+      --text:#e6eef6;
+      --brand:#e11d48; /* red accent */
+      --brand-2:#38bdf8; /* cyan accent */
+      --ring: 0 0 0 3px rgba(56,189,248,0.35);
+      --radius-2xl: 1.25rem;
+      --shadow-md: 0 8px 30px rgba(2,8,23,0.45);
+      --shadow-lg: 0 20px 60px rgba(2,8,23,0.5);
+      --maxw: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1000px 600px at 90% -10%,rgba(56,189,248,0.12),transparent),
+                                   radial-gradient(900px 600px at -10% 110%,rgba(225,29,72,0.12),transparent),
+                                   var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+    /* NAV */
+    .nav{position:sticky;top:0;background:rgba(11,15,20,0.7);backdrop-filter:saturate(140%) blur(10px);z-index:50;border-bottom:1px solid rgba(148,163,184,0.15)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.3px}
+    .logo{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--brand),#7c0f2b);box-shadow:var(--shadow-md)}
+    .logo i{width:22px;height:22px;border-radius:4px;background:linear-gradient(135deg,var(--brand-2),#2563eb)}
+    .nav a.link{padding:.6rem .9rem;border-radius:999px;color:var(--muted)}
+    .nav a.link:hover{color:var(--text);background:rgba(148,163,184,0.08)}
+    .cta{padding:.65rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),#fb7185);border:1px solid rgba(255,255,255,0.1);box-shadow:var(--shadow-md);font-weight:600}
+    .cta:hover{filter:brightness(1.05)}
+    /* HERO */
+    .hero{padding:5rem 0 3rem;position:relative}
+    .hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:0 0 1rem}
+    .hero p{font-size:clamp(1rem,1.6vw,1.2rem);color:var(--muted);max-width:800px}
+    .badges{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.25rem 0 2rem}
+    .badge{border:1px solid rgba(148,163,184,0.2);padding:.45rem .7rem;border-radius:999px;color:#cbd5e1;background:rgba(148,163,184,0.06)}
+    .hero-cards{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2.5rem}
+    .card{grid-column:span 4;background:var(--panel);border:1px solid rgba(148,163,184,0.15);border-radius:var(--radius-2xl);padding:1.25rem;box-shadow:var(--shadow-md)}
+    .card h3{margin:.3rem 0 .5rem;font-size:1.1rem}
+    .card p{margin:0;color:var(--muted);font-size:.98rem}
+    @media (max-width:960px){.card{grid-column:span 6}} 
+    @media (max-width:640px){.card{grid-column:span 12}}
+    /* SECTION */
+    section{padding:4.5rem 0;border-top:1px solid rgba(148,163,184,0.12)}
+    h2.section-title{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 1rem}
+    .muted{color:var(--muted)}
+    /* SERVICES */
+    .services{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:1.75rem}
+    .service{grid-column:span 4;background:linear-gradient(180deg,rgba(56,189,248,0.08),transparent),var(--panel);border:1px solid rgba(148,163,184,0.18);border-radius:var(--radius-2xl);padding:1.25rem;transition:transform .2s ease, box-shadow .2s ease}
+    .service:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .service h3{margin:.2rem 0 .4rem}
+    .service small{color:#cbd5e1}
+    @media (max-width:960px){.service{grid-column:span 6}} 
+    @media (max-width:640px){.service{grid-column:span 12}}
+    /* CTA BAR */
+    .cta-bar{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
+    .ghost{padding:.65rem 1rem;border-radius:999px;border:1px solid rgba(148,163,184,0.25);background:transparent;color:var(--text);font-weight:600}
+    .ghost:hover{background:rgba(148,163,184,0.08)}
+    /* ABOUT */
+    .about{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
+    .keypoints{display:grid;gap:.75rem}
+    .kp{background:var(--panel);border:1px solid rgba(148,163,184,0.15);border-radius:1rem;padding:1rem}
+    @media (max-width:900px){.about{grid-template-columns:1fr}}
+    /* CONTACT */
+    form{display:grid;gap:.9rem;margin-top:1rem}
+    input,textarea{width:100%;padding:.85rem 1rem;border-radius:.9rem;border:1px solid rgba(148,163,184,0.2);background:#0d141d;color:var(--text)}
+    input:focus,textarea:focus{outline:none;box-shadow:var(--ring);border-color:#67e8f9}
+    button[type="submit"]{padding:.9rem 1.2rem;border-radius:.9rem;background:linear-gradient(135deg,var(--brand-2),#2563eb);color:white;border:none;font-weight:700;box-shadow:var(--shadow-md)}
+    .footer{padding:2rem 0;border-top:1px solid rgba(148,163,184,0.12);color:var(--muted)}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    @media (max-width:800px){.grid-2{grid-template-columns:1fr}}
+    .tag{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .6rem;border-radius:.6rem;background:rgba(148,163,184,0.12);color:#dbeafe;border:1px solid rgba(148,163,184,0.22);font-size:.85rem}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home" aria-label="Technet Technologies Home">
+        <span class="logo" aria-hidden="true"><i></i></span>
+        <span>Technet <span style="color:var(--brand-2)">Technologies</span></span>
+      </a>
+      <div>
+        <a class="link" href="#services">Services</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#contact">Contact</a>
+        <a class="cta" href="mailto:hello@technet.co.zw">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="wrap">
+      <div class="badges">
+        <span class="badge">Proudly Zimbabwean • <strong>technet.co.zw</strong></span>
+        <span class="badge">CEO: <strong>Techboy</strong></span>
+      </div>
+      <h1>Building bold software for real‑world impact.</h1>
+      <p>We design and ship production‑grade solutions across web, mobile, and AI. From school management platforms to forex trading tools and lawful torrenting infrastructure, we turn complex ideas into clean, fast systems.</p>
+      <div class="cta-bar">
+        <a class="cta" href="#contact">Start a Project</a>
+        <a class="ghost" href="#services">Explore Services</a>
+      </div>
+
+      <div class="hero-cards">
+        <div class="card">
+          <h3>Software Development</h3>
+          <p>Full‑stack web & desktop apps with modern architectures (APIs, microservices, cloud‑native).</p>
+        </div>
+        <div class="card">
+          <h3>AI Development</h3>
+          <p>ML pipelines, LLM integrations, chatbots, and computer vision — built with responsibility in mind.</p>
+        </div>
+        <div class="card">
+          <h3>App Design</h3>
+          <p>Human‑centered UI/UX for Android, iOS, and cross‑platform frameworks. Prototype to store‑ready.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <h2 class="section-title">Services</h2>
+      <p class="muted">End‑to‑end delivery. Clear communication. Strong security posture.</p>
+      <div class="services">
+        <div class="service">
+          <h3>Software Development</h3>
+          <small>Web • Desktop • APIs</small>
+          <p>Custom systems using resilient patterns, CI/CD, and modern stacks. Clean code, clean docs.</p>
+        </div>
+        <div class="service">
+          <h3>Forex Trading Tools</h3>
+          <small>Data • Automation • Risk Notes</small>
+          <p>Backtesting dashboards, signal tooling, and integrations. <em>Educational tools — not financial advice.</em></p>
+        </div>
+        <div class="service">
+          <h3>Application Design</h3>
+          <small>Android • iOS • Cross‑platform</small>
+          <p>Wireframes, prototypes, and polished UI kits that translate directly into development.</p>
+        </div>
+        <div class="service">
+          <h3>School Management Systems</h3>
+          <small>Students • Parents • Staff</small>
+          <p>Attendance, grading, results portals, fee tracking, communication, and analytics dashboards.</p>
+        </div>
+        <div class="service">
+          <h3>Torrenting Solutions</h3>
+          <small>P2P • Distribution • Compliance</small>
+          <p>Private trackers and P2P distribution for lawful content (e.g., large asset delivery, FOSS mirroring). We do not support piracy.</p>
+        </div>
+        <div class="service">
+          <h3>AI Development</h3>
+          <small>LLMs • CV • NLP</small>
+          <p>Chatbots, RAG, detection & classification, and automation — with evaluation & monitoring built‑in.</p>
+        </div>
+      </div>
+      <div class="cta-bar">
+        <a class="cta" href="#contact">Get Pricing</a>
+        <a class="ghost" href="#faq">View FAQs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <h2 class="section-title">About Technet Technologies</h2>
+        <p class="muted">Based in Zimbabwe, Technet Technologies builds software that respects users and scales with your ambitions. Led by <strong>Techboy</strong>, our multidisciplinary crew blends engineering, product, and design.</p>
+        <div class="keypoints">
+          <div class="kp"><strong>Security‑first:</strong> OAuth2, 2FA, and defense‑in‑depth by default.</div>
+          <div class="kp"><strong>Cloud‑native:</strong> Containers, CI/CD, observability, and cost‑aware infra.</div>
+          <div class="kp"><strong>Education‑friendly:</strong> Tools that actually help teachers, students, and parents.</div>
+        </div>
+      </div>
+      <div>
+        <div class="kp">
+          <div class="tag">HQ: Zimbabwe</div>
+          <div class="tag">Domain: technet.co.zw</div>
+          <div class="tag">Email: hello@technet.co.zw</div>
+          <div class="tag">CEO: Techboy</div>
+        </div>
+        <div class="kp" style="margin-top:.9rem">
+          <strong>Note:</strong> Forex trading involves risk. Our software is educational and tool‑ing only and does not constitute financial advice. Always trade responsibly.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <h2 class="section-title">FAQs</h2>
+      <div class="grid-2">
+        <div class="kp"><strong>Do you host and manage domains?</strong><br/>Yes — we can help register a <code>.co.zw</code> domain (e.g., <code>technet.co.zw</code>) and set up DNS, email, and SSL.</div>
+        <div class="kp"><strong>What stacks do you use?</strong><br/>Modern JS/TS, Python, JVM, and cloud‑native tooling — chosen to fit the problem, not force it.</div>
+        <div class="kp"><strong>Is torrenting legal?</strong><br/>Torrent technology is legal; distributing copyrighted content without authorization is not. We only support lawful use cases.</div>
+        <div class="kp"><strong>How do we start?</strong><br/>Send a brief to <a href="mailto:hello@technet.co.zw">hello@technet.co.zw</a> and we’ll set up a discovery call.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="section-title">Contact</h2>
+      <p class="muted">Tell us a bit about your project and we’ll reply within 1–2 business days.</p>
+      <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back to you via email.');">
+        <div class="grid-2">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" placeholder="Your full name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@company.com" required />
+          </div>
+        </div>
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" placeholder="Project / idea / question" />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us what you want to build…"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap grid-2">
+      <div>
+        <strong>Technet Technologies</strong><br/>
+        <span class="muted">© <span id="y"></span> Technet Technologies. All rights reserved.</span>
+      </div>
+      <div style="text-align:right">
+        <a href="#home" class="link">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // year stamp
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
