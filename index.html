@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Technet Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --neon:#00f5ff;
+  --neon2:#ff00c8;
+  --gold:#ffd700;
+  --dark:#030b14;
+  --card:#071428;
+  --card2:#0a1e3a;
+  --text:#e0f4ff;
+  --muted:#7fb3d3;
+}
+body{background:var(--dark);color:var(--text);font-family:'Rajdhani',sans-serif;overflow-x:hidden;}
+a{color:var(--neon);text-decoration:none;}
+a:hover{color:var(--neon2);}
+nav{position:sticky;top:0;z-index:100;background:rgba(3,11,20,0.95);border-bottom:1px solid rgba(0,245,255,0.2);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;backdrop-filter:blur(10px);}
+.logo{font-family:'Orbitron',monospace;font-size:1.1rem;font-weight:900;color:var(--neon);letter-spacing:2px;}
+.nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.nav-links a{font-size:0.85rem;font-weight:600;letter-spacing:1px;color:var(--muted);transition:color .2s;}
+.nav-links a:hover{color:var(--neon);}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem 2rem;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(0,245,255,0.07) 0%,transparent 70%),radial-gradient(ellipse at 80% 80%,rgba(255,0,200,0.05) 0%,transparent 60%);}
+.hero-badge{font-family:'Orbitron',monospace;font-size:0.7rem;letter-spacing:4px;color:var(--neon2);border:1px solid rgba(255,0,200,0.4);padding:6px 18px;border-radius:20px;margin-bottom:1.5rem;text-transform:uppercase;}
+.hero h1{font-family:'Orbitron',monospace;font-size:clamp(2rem,6vw,4rem);font-weight:900;line-height:1.1;margin-bottom:1rem;background:linear-gradient(135deg,var(--neon),#fff,var(--neon2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.tagline{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:600;color:var(--gold);letter-spacing:3px;margin-bottom:0.5rem;text-transform:uppercase;}
+.hero-sub{color:var(--muted);font-size:1rem;margin-bottom:2rem;max-width:500px;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.btn{padding:12px 28px;border-radius:4px;font-family:'Orbitron',monospace;font-size:0.75rem;letter-spacing:2px;font-weight:700;cursor:pointer;transition:all .2s;border:none;}
+.btn-primary{background:var(--neon);color:var(--dark);}
+.btn-primary:hover{background:#fff;transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--neon);border:1px solid var(--neon);}
+.btn-outline:hover{background:rgba(0,245,255,0.1);}
+section{padding:4rem 2rem;max-width:1200px;margin:0 auto;}
+.section-label{font-family:'Orbitron',monospace;font-size:0.65rem;letter-spacing:4px;color:var(--neon2);text-transform:uppercase;margin-bottom:0.5rem;}
+.section-title{font-family:'Orbitron',monospace;font-size:clamp(1.3rem,3vw,2rem);font-weight:700;color:#fff;margin-bottom:0.5rem;}
+.section-line{width:60px;height:2px;background:linear-gradient(90deg,var(--neon),var(--neon2));margin-bottom:2rem;}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(0,245,255,0.3),transparent);margin:0;}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
+.service-card{background:var(--card);border:1px solid rgba(0,245,255,0.15);border-radius:8px;padding:1.5rem;transition:all .3s;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--neon2));opacity:0;transition:opacity .3s;}
+.service-card:hover{border-color:rgba(0,245,255,0.4);transform:translateY(-4px);}
+.service-card:hover::before{opacity:1;}
+.service-icon{font-size:2rem;margin-bottom:0.75rem;}
+.service-card h3{font-family:'Orbitron',monospace;font-size:0.85rem;color:var(--neon);margin-bottom:0.5rem;letter-spacing:1px;}
+.service-card p{color:var(--muted);font-size:0.9rem;line-height:1.5;}
+.gaming-section{background:linear-gradient(135deg,rgba(7,20,40,0.8),rgba(10,30,58,0.8));border:1px solid rgba(255,0,200,0.2);border-radius:12px;padding:2.5rem;margin-top:1rem;}
+.gaming-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1.5rem;}
+.game-item{background:rgba(0,0,0,0.4);border:1px solid rgba(255,0,200,0.2);border-radius:6px;padding:1rem;text-align:center;transition:all .2s;}
+.game-item:hover{border-color:var(--neon2);transform:scale(1.04);}
+.game-item .game-icon{font-size:2rem;display:block;margin-bottom:0.5rem;}
+.game-item span{font-size:0.8rem;font-weight:600;color:var(--text);letter-spacing:1px;}
+.forex-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1rem;}
+.forex-card{background:var(--card2);border:1px solid rgba(255,215,0,0.25);border-radius:8px;padding:1.5rem;display:flex;flex-direction:column;gap:0.75rem;}
+.forex-card h3{font-family:'Orbitron',monospace;font-size:0.8rem;color:var(--gold);letter-spacing:1px;}
+.forex-card p{color:var(--muted);font-size:0.85rem;}
+.forex-btn{display:inline-block;padding:10px 20px;background:linear-gradient(135deg,rgba(255,215,0,0.15),rgba(255,215,0,0.05));border:1px solid var(--gold);border-radius:4px;color:var(--gold);font-family:'Orbitron',monospace;font-size:0.65rem;letter-spacing:2px;text-align:center;transition:all .2s;cursor:pointer;}
+.forex-btn:hover{background:rgba(255,215,0,0.2);color:#fff;}
+.live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,0,0,0.1);border:1px solid rgba(255,50,50,0.4);padding:6px 16px;border-radius:20px;font-size:0.8rem;color:#ff4444;font-weight:600;letter-spacing:1px;margin-bottom:1rem;}
+.live-dot{width:8px;height:8px;background:#ff4444;border-radius:50%;animation:pulse 1.2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.4);}}
+.stream-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem;}
+.stream-card{background:var(--card);border:1px solid rgba(255,50,50,0.2);border-radius:8px;padding:1.25rem;transition:all .2s;}
+.stream-card:hover{border-color:rgba(255,50,50,0.5);transform:translateY(-2px);}
+.stream-card h4{font-family:'Orbitron',monospace;font-size:0.75rem;color:#ff6666;margin-bottom:0.4rem;}
+.stream-card p{font-size:0.8rem;color:var(--muted);}
+.ai-section{background:var(--card);border:1px solid rgba(0,245,255,0.2);border-radius:12px;padding:2rem;max-width:700px;margin:1rem auto 0;}
+.ai-header{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;}
+.ai-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon2));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:0.75rem;font-weight:900;color:var(--dark);}
+.ai-name{font-family:'Orbitron',monospace;font-size:0.9rem;font-weight:700;color:var(--neon);}
+.ai-status{font-size:0.75rem;color:var(--muted);}
+.chat-box{background:rgba(0,0,0,0.3);border-radius:8px;padding:1rem;min-height:200px;max-height:340px;overflow-y:auto;margin-bottom:1rem;display:flex;flex-direction:column;gap:10px;}
+.msg{display:flex;gap:8px;align-items:flex-start;}
+.msg.user{flex-direction:row-reverse;}
+.msg-bubble{padding:8px 14px;border-radius:8px;font-size:0.85rem;max-width:80%;line-height:1.4;}
+.msg.ai .msg-bubble{background:rgba(0,245,255,0.08);border:1px solid rgba(0,245,255,0.15);color:var(--text);}
+.msg.user .msg-bubble{background:rgba(0,245,255,0.15);border:1px solid rgba(0,245,255,0.3);color:#fff;}
+.msg-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;flex-shrink:0;}
+.ai-av{background:linear-gradient(135deg,var(--neon),var(--neon2));color:var(--dark);}
+.user-av{background:rgba(255,0,200,0.3);color:var(--neon2);}
+.chat-input-row{display:flex;gap:8px;}
+.chat-input-row input{flex:1;background:rgba(0,0,0,0.4);border:1px solid rgba(0,245,255,0.2);border-radius:6px;padding:10px 14px;color:var(--text);font-family:'Rajdhani',sans-serif;font-size:0.9rem;outline:none;}
+.chat-input-row input:focus{border-color:var(--neon);}
+.chat-input-row input::placeholder{color:var(--muted);}
+.send-btn{padding:10px 18px;background:var(--neon);color:var(--dark);border:none;border-radius:6px;font-family:'Orbitron',monospace;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:1px;}
+.send-btn:hover{background:#fff;}
+.thinking{color:var(--muted);font-size:0.8rem;font-style:italic;padding:4px 0;}
+.founder-card{display:flex;align-items:center;gap:2rem;background:var(--card2);border:1px solid rgba(0,245,255,0.15);border-radius:12px;padding:2rem;flex-wrap:wrap;}
+.founder-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon2));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:var(--dark);flex-shrink:0;}
+.founder-info h3{font-family:'Orbitron',monospace;font-size:1.1rem;color:#fff;margin-bottom:0.25rem;}
+.founder-title{color:var(--neon2);font-size:0.85rem;letter-spacing:2px;margin-bottom:0.75rem;}
+.contact-list{display:flex;flex-direction:column;gap:4px;}
+.contact-list a{color:var(--muted);font-size:0.85rem;transition:color .2s;}
+.contact-list a:hover{color:var(--neon);}
+.socials{display:flex;gap:12px;margin-top:1rem;flex-wrap:wrap;}
+.social-badge{padding:5px 14px;border:1px solid rgba(0,245,255,0.2);border-radius:20px;font-size:0.75rem;color:var(--neon);transition:all .2s;}
+.social-badge:hover{border-color:var(--neon);background:rgba(0,245,255,0.1);}
+footer{background:rgba(0,0,0,0.5);border-top:1px solid rgba(0,245,255,0.1);padding:2rem;text-align:center;color:var(--muted);font-size:0.8rem;}
+footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--neon);margin-bottom:0.5rem;font-weight:900;}
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:none;}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .founder-card{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">TECHNET</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#gaming">Gaming</a>
+    <a href="#forex">Forex</a>
+    <a href="#streaming">Streaming</a>
+    <a href="#genius">Genius AI</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Est. by Techboy</div>
+  <h1>TECHNET<br>TECHNOLOGIES</h1>
+  <div class="tagline">No Risk, No Reward</div>
+  <p class="hero-sub">Your one-stop hub for digital solutions, gaming, forex trading, and AI-powered assistance.</p>
+  <div class="hero-btns">
+    <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
+    <button class="btn btn-outline" onclick="document.getElementById('genius').scrollIntoView({behavior:'smooth'})">Chat with Genius AI</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="services" class="fade-in">
+  <div class="section-label">What We Do</div>
+  <div class="section-title">Our Services</div>
+  <div class="section-line"></div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🌐</div>
+      <h3>Website Creation</h3>
+      <p>Custom-built, blazing-fast websites tailored to your brand and business goals.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Software Development</h3>
+      <p>Robust desktop and web software solutions engineered for performance and scale.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>App Development</h3>
+      <p>Mobile and web applications built to keep your users engaged and your business growing.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏫</div>
+      <h3>School Management Systems</h3>
+      <p>Full-featured systems to manage students, staff, attendance, grades, and more.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🛒</div>
+      <h3>Shop &amp; Company Systems</h3>
+      <p>Point-of-sale, inventory, and business management platforms for retail and enterprise.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎮</div>
+      <h3>Gaming Shop</h3>
+      <p>Digital game sales, accessories, and gaming gear for every kind of player.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="gaming" class="fade-in">
+  <div class="section-label">Gaming Hub</div>
+  <div class="section-title">Games We Feature</div>
+  <div class="section-line"></div>
+  <div class="gaming-section">
+    <div class="gaming-grid">
+      <div class="game-item">
+        <span class="game-icon">🏙️</span>
+        <span>GTA 5</span>
+      </div>
+      <div class="game-item">
+        <span class="game-icon">🕷️</span>
+        <span>Spider-Man Miles Morales</span>
+      </div>
+      <div class="game-item">
+        <span class="game-icon">🔫</span>
+        <span>More Coming Soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="streaming" class="fade-in">
+  <div class="section-label">Broadcasting</div>
+  <div class="section-title">Live Streaming</div>
+  <div class="section-line"></div>
+  <div class="live-badge"><span class="live-dot"></span> LIVE AVAILABLE</div>
+  <div class="stream-grid">
+    <div class="stream-card">
+      <h4>🎮 Game Streams</h4>
+      <p>Catch live gameplay sessions, walkthroughs, and epic moments from GTA 5, Spider-Man &amp; more.</p>
+    </div>
+    <div class="stream-card">
+      <h4>📈 Forex Live Sessions</h4>
+      <p>Live trading analysis and signals streamed in real-time for your learning and gains.</p>
+    </div>
+    <div class="stream-card">
+      <h4>🏆 Tournaments &amp; Events</h4>
+      <p>Community gaming events and trading competitions streamed live.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="forex" class="fade-in">
+  <div class="section-label">Financial Trading</div>
+  <div class="section-title">Forex &amp; Binary Trading</div>
+  <div class="section-line"></div>
+  <p style="color:var(--muted);margin-bottom:1.5rem;max-width:600px;">Join thousands of traders using our referral platforms. Sign up via our affiliate links for exclusive bonuses and trading advantages.</p>
+  <div class="forex-grid">
+    <div class="forex-card">
+      <h3>📊 Deriv Trading</h3>
+      <p>Industry-leading forex and binary options platform. Trade with confidence using Deriv's regulated environment and powerful tools.</p>
+      <a href="https://deriv.partners/rx?sidc=5F0D50BB-0BB6-4B36-97FE-4EF17CADAA0D&utm_campaign=dynamicworks&utm_medium=affiliate&utm_source=CU78706" target="_blank" class="forex-btn">Join Deriv →</a>
+    </div>
+    <div class="forex-card">
+      <h3>🌍 Weltrade</h3>
+      <p>Professional trading conditions with tight spreads. Start your Weltrade journey with our exclusive referral bonus.</p>
+      <a href="https://deriv.partners/rx?sidc=5F0D50BB-0BB6-4B36-97FE-4EF17CADAA0D&utm_campaign=dynamicworks&utm_medium=affiliate&utm_source=CU78706" target="_blank" class="forex-btn">Join Weltrade →</a>
+    </div>
+    <div class="forex-card">
+      <h3>⚡ Pocket Option</h3>
+      <p>Fast binary options trading with high payouts. Get started with our exclusive Pocket Option referral link.</p>
+      <a href="https://pocket-friends.com/r/3u33pnbb5t" target="_blank" class="forex-btn">Join Pocket Option →</a>
+    </div>
+  </div>
+  <p style="color:rgba(127,179,211,0.5);font-size:0.75rem;margin-top:1rem;">⚠️ Trading involves risk. Only trade with capital you can afford to lose.</p>
+</section>
+
+<div class="divider"></div>
+
+<section id="genius" class="fade-in">
+  <div class="section-label">AI Assistant</div>
+  <div class="section-title">Meet Genius</div>
+  <div class="section-line"></div>
+  <p style="color:var(--muted);text-align:center;margin-bottom:1.5rem;">Your intelligent assistant, powered by AI — ask anything about our services, trading, or tech.</p>
+  <div class="ai-section">
+    <div class="ai-header">
+      <div class="ai-avatar">G</div>
+      <div>
+        <div class="ai-name">Genius AI</div>
+        <div class="ai-status">● Online — Technet Technologies Assistant</div>
+      </div>
+    </div>
+    <div class="chat-box" id="chatBox">
+      <div class="msg ai">
+        <div class="msg-avatar ai-av">G</div>
+        <div class="msg-bubble">Hey! I'm Genius, Technet Technologies' AI assistant. I can help you with our services, forex trading info, gaming, or anything else. What would you like to know? 🚀</div>
+      </div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Ask Genius anything..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+      <button class="send-btn" onclick="sendMsg()">SEND</button>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact" class="fade-in">
+  <div class="section-label">The Founder</div>
+  <div class="section-title">Meet Techboy</div>
+  <div class="section-line"></div>
+  <div class="founder-card">
+    <div class="founder-avatar">TB</div>
+    <div class="founder-info">
+      <h3>Techboy</h3>
+      <div class="founder-title">Founder &amp; CEO — Technet Technologies</div>
+      <div class="contact-list">
+        <a href="tel:+263784582053">📞 +263 784 582 053</a>
+        <a href="mailto:preachtafaramatambo@gmail.com">✉️ preachtafaramatambo@gmail.com</a>
+      </div>
+      <div class="socials">
+        <a href="https://instagram.com/techboywayne" target="_blank" class="social-badge">Instagram @techboywayne</a>
+        <a href="https://tiktok.com/@techboywayne" target="_blank" class="social-badge">TikTok @techboywayne</a>
+        <a href="https://facebook.com/techboywayne" target="_blank" class="social-badge">Facebook techboywayne</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">TECHNET TECHNOLOGIES</div>
+  <p>No Risk, No Reward — Founded by Techboy</p>
+  <p style="margin-top:8px;font-size:0.75rem;">© 2024 Technet Technologies. All rights reserved.</p>
+</footer>
+
+<script>
+const SYSTEM_PROMPT = "You are Genius, the AI assistant for Technet Technologies — a tech company founded by Techboy (CEO). Keep responses concise, helpful, and enthusiastic. The company offers: website creation, software development, app development, school and shop management systems, a gaming shop (GTA 5, Spider-Man Miles Morales), live streaming, forex and binary trading via Deriv, Weltrade, and Pocket Option. Phone: +263784582053, Email: preachtafaramatambo@gmail.com, Social: @techboywayne. Company motto: No Risk No Reward.";
+
+async function sendMsg() {
+  const input = document.getElementById('chatInput');
+  const chatBox = document.getElementById('chatBox');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  appendMsg('user', text);
+  const thinking = document.createElement('div');
+  thinking.className = 'thinking';
+  thinking.id = 'thinking';
+  thinking.textContent = 'Genius is thinking...';
+  chatBox.appendChild(thinking);
+  chatBox.scrollTop = chatBox.scrollHeight;
+  try {
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 400,
+        system: SYSTEM_PROMPT,
+        messages: [{ role: 'user', content: text }]
+      })
+    });
+    const data = await resp.json();
+    const reply = data.content && data.content.length > 0
+      ? data.content.map(function(b){ return b.text || ''; }).join('')
+      : "Sorry, I couldn't process that. Try again!";
+    const el = document.getElementById('thinking');
+    if (el) el.remove();
+    appendMsg('ai', reply);
+  } catch(e) {
+    const el = document.getElementById('thinking');
+    if (el) el.remove();
+    appendMsg('ai', "Oops! Something went wrong. Please try again.");
+  }
+}
+
+function appendMsg(role, text) {
+  const chatBox = document.getElementById('chatBox');
+  const div = document.createElement('div');
+  div.className = 'msg ' + role;
+  const av = document.createElement('div');
+  av.className = 'msg-avatar ' + (role === 'ai' ? 'ai-av' : 'user-av');
+  av.textContent = role === 'ai' ? 'G' : 'U';
+  const bubble = document.createElement('div');
+  bubble.className = 'msg-bubble';
+  bubble.textContent = text;
+  if (role === 'user') { div.appendChild(bubble); div.appendChild(av); }
+  else { div.appendChild(av); div.appendChild(bubble); }
+  chatBox.appendChild(div);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.05 });
+document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
