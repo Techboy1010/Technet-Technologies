@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Technet Technologies</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet"/>
+<!-- JuicyAds Main Script -->
+<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
@@ -26,7 +28,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(3,11,20,0.95);border-botto
 .nav-links{display:flex;gap:1.5rem;flex-wrap:wrap;}
 .nav-links a{font-size:0.85rem;font-weight:600;letter-spacing:1px;color:var(--muted);transition:color .2s;}
 .nav-links a:hover{color:var(--neon);}
-.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem 2rem;position:relative;overflow:hidden;}
+.hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem 2rem;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,rgba(0,245,255,0.07) 0%,transparent 70%),radial-gradient(ellipse at 80% 80%,rgba(255,0,200,0.05) 0%,transparent 60%);}
 .hero-badge{font-family:'Orbitron',monospace;font-size:0.7rem;letter-spacing:4px;color:var(--neon2);border:1px solid rgba(255,0,200,0.4);padding:6px 18px;border-radius:20px;margin-bottom:1.5rem;text-transform:uppercase;}
 .hero h1{font-family:'Orbitron',monospace;font-size:clamp(2rem,6vw,4rem);font-weight:900;line-height:1.1;margin-bottom:1rem;background:linear-gradient(135deg,var(--neon),#fff,var(--neon2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -71,12 +73,14 @@ section{padding:4rem 2rem;max-width:1200px;margin:0 auto;}
 .stream-card:hover{border-color:rgba(255,50,50,0.5);transform:translateY(-2px);}
 .stream-card h4{font-family:'Orbitron',monospace;font-size:0.75rem;color:#ff6666;margin-bottom:0.4rem;}
 .stream-card p{font-size:0.8rem;color:var(--muted);}
-.ai-section{background:var(--card);border:1px solid rgba(0,245,255,0.2);border-radius:12px;padding:2rem;max-width:700px;margin:1rem auto 0;}
+/* AI Assistant Section Layout */
+.ai-section-container{max-width:1100px;margin:1rem auto 0;display:flex;gap:2rem;align-items:stretch;}
+.ai-chat-wrapper{flex:2;background:var(--card);border:1px solid rgba(0,245,255,0.2);border-radius:12px;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;}
 .ai-header{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem;}
 .ai-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon2));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:0.75rem;font-weight:900;color:var(--dark);}
 .ai-name{font-family:'Orbitron',monospace;font-size:0.9rem;font-weight:700;color:var(--neon);}
 .ai-status{font-size:0.75rem;color:var(--muted);}
-.chat-box{background:rgba(0,0,0,0.3);border-radius:8px;padding:1rem;min-height:200px;max-height:340px;overflow-y:auto;margin-bottom:1rem;display:flex;flex-direction:column;gap:10px;}
+.chat-box{background:rgba(0,0,0,0.3);border-radius:8px;padding:1rem;min-height:220px;max-height:340px;overflow-y:auto;margin-bottom:1rem;display:flex;flex-direction:column;gap:10px;}
 .msg{display:flex;gap:8px;align-items:flex-start;}
 .msg.user{flex-direction:row-reverse;}
 .msg-bubble{padding:8px 14px;border-radius:8px;font-size:0.85rem;max-width:80%;line-height:1.4;}
@@ -92,6 +96,96 @@ section{padding:4rem 2rem;max-width:1200px;margin:0 auto;}
 .send-btn{padding:10px 18px;background:var(--neon);color:var(--dark);border:none;border-radius:6px;font-family:'Orbitron',monospace;font-size:0.65rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:1px;}
 .send-btn:hover{background:#fff;}
 .thinking{color:var(--muted);font-size:0.8rem;font-style:italic;padding:4px 0;}
+/* Styled Cyber Advertisement Components */
+.cyber-ad-banner-474 {
+  background: linear-gradient(135deg, rgba(7, 20, 40, 0.9), rgba(10, 30, 58, 0.9));
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2.5rem auto;
+  max-width: 534px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 25px rgba(0, 245, 255, 0.1);
+  overflow: hidden;
+}
+.cyber-ad-banner-474::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon), var(--neon2));
+}
+.cyber-ad-tag-474 {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--neon);
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.cyber-ad-body-474 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  min-height: 190px;
+  background: radial-gradient(circle, rgba(3,11,20,0.6) 0%, rgba(7,20,40,0.9) 100%);
+  border: 1px dashed rgba(0, 245, 255, 0.2);
+  border-radius: 6px;
+}
+.ai-ad-sidebar-300 {
+  flex: 1;
+  max-width: 360px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(7, 20, 40, 0.9), rgba(10, 30, 58, 0.9));
+  border: 1px solid rgba(255, 0, 200, 0.25);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 25px rgba(255, 0, 200, 0.1);
+  overflow: hidden;
+}
+.ai-ad-sidebar-300::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon2), var(--neon));
+}
+.ai-ad-tag-300 {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  color: var(--neon2);
+  margin-bottom: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.ai-ad-body-300 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  min-height: 250px;
+  background: radial-gradient(circle, rgba(3,11,20,0.6) 0%, rgba(7,20,40,0.9) 100%);
+  border: 1px dashed rgba(255, 0, 200, 0.2);
+  border-radius: 6px;
+}
 .founder-card{display:flex;align-items:center;gap:2rem;background:var(--card2);border:1px solid rgba(0,245,255,0.15);border-radius:12px;padding:2rem;flex-wrap:wrap;}
 .founder-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--neon),var(--neon2));display:flex;align-items:center;justify-content:center;font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:var(--dark);flex-shrink:0;}
 .founder-info h3{font-family:'Orbitron',monospace;font-size:1.1rem;color:#fff;margin-bottom:0.25rem;}
@@ -106,6 +200,19 @@ footer{background:rgba(0,0,0,0.5);border-top:1px solid rgba(0,245,255,0.1);paddi
 footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--neon);margin-bottom:0.5rem;font-weight:900;}
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
 .fade-in.visible{opacity:1;transform:none;}
+@media(max-width:900px){
+  .ai-section-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .ai-chat-wrapper {
+    width: 100%;
+  }
+  .ai-ad-sidebar-300 {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 @media(max-width:600px){
   .nav-links{display:none;}
   .founder-card{flex-direction:column;text-align:center;}
@@ -113,11 +220,6 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
 </style>
 </head>
 <body>
-<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1121503" data-width="300" data-height="250"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1121503});</script>
-<!--JuicyAds END-->
 <nav>
   <div class="logo">TECHNET</div>
   <div class="nav-links">
@@ -129,7 +231,6 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
     <a href="#contact">Contact</a>
   </div>
 </nav>
-
 <div class="hero">
   <div class="hero-badge">Est. by Techboy</div>
   <h1>TECHNET<br>TECHNOLOGIES</h1>
@@ -140,9 +241,15 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
     <button class="btn btn-outline" onclick="document.getElementById('genius').scrollIntoView({behavior:'smooth'})">Chat with Genius AI</button>
   </div>
 </div>
-
+<!-- Wide Banner Sponsor Zone 474x190 (Adzone 1121505) -->
+<div class="cyber-ad-banner-474">
+  <div class="cyber-ad-tag-474">⚡ TECHNET GLOBAL SPONSOR ZONE ⚡</div>
+  <div class="cyber-ad-body-474">
+    <ins id="1121505" data-width="474" data-height="190"></ins>
+    <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1121505});</script>
+  </div>
+</div>
 <div class="divider"></div>
-
 <section id="services" class="fade-in">
   <div class="section-label">What We Do</div>
   <div class="section-title">Our Services</div>
@@ -180,9 +287,7 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <section id="gaming" class="fade-in">
   <div class="section-label">Gaming Hub</div>
   <div class="section-title">Games We Feature</div>
@@ -204,7 +309,6 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
     </div>
   </div>
 </section>
-
 <section id="streaming" class="fade-in">
   <div class="section-label">Broadcasting</div>
   <div class="section-title">Live Streaming</div>
@@ -225,9 +329,7 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <section id="forex" class="fade-in">
   <div class="section-label">Financial Trading</div>
   <div class="section-title">Forex &amp; Binary Trading</div>
@@ -252,37 +354,44 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
   </div>
   <p style="color:rgba(127,179,211,0.5);font-size:0.75rem;margin-top:1rem;">⚠️ Trading involves risk. Only trade with capital you can afford to lose.</p>
 </section>
-
 <div class="divider"></div>
-
 <section id="genius" class="fade-in">
   <div class="section-label">AI Assistant</div>
   <div class="section-title">Meet Genius</div>
   <div class="section-line"></div>
   <p style="color:var(--muted);text-align:center;margin-bottom:1.5rem;">Your intelligent assistant, powered by AI — ask anything about our services, trading, or tech.</p>
-  <div class="ai-section">
-    <div class="ai-header">
-      <div class="ai-avatar">G</div>
-      <div>
-        <div class="ai-name">Genius AI</div>
-        <div class="ai-status">● Online — Technet Technologies Assistant</div>
+  
+  <div class="ai-section-container">
+    <div class="ai-chat-wrapper">
+      <div class="ai-header">
+        <div class="ai-avatar">G</div>
+        <div>
+          <div class="ai-name">Genius AI</div>
+          <div class="ai-status">● Online — Technet Technologies Assistant</div>
+        </div>
+      </div>
+      <div class="chat-box" id="chatBox">
+        <div class="msg ai">
+          <div class="msg-avatar ai-av">G</div>
+          <div class="msg-bubble">Hey! I'm Genius, Technet Technologies' AI assistant. I can help you with our services, forex trading info, gaming, or anything else. What would you like to know? 🚀</div>
+        </div>
+      </div>
+      <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask Genius anything..." onkeydown="if(event.key==='Enter')sendMsg()"/>
+        <button class="send-btn" onclick="sendMsg()">SEND</button>
       </div>
     </div>
-    <div class="chat-box" id="chatBox">
-      <div class="msg ai">
-        <div class="msg-avatar ai-av">G</div>
-        <div class="msg-bubble">Hey! I'm Genius, Technet Technologies' AI assistant. I can help you with our services, forex trading info, gaming, or anything else. What would you like to know? 🚀</div>
+    <!-- Square Sidebar Partner Zone 300x250 (Adzone 1121503) -->
+    <div class="ai-ad-sidebar-300">
+      <div class="ai-ad-tag-300">🔥 TECHNET PARTNER ZONE 🔥</div>
+      <div class="ai-ad-body-300">
+        <ins id="1121503" data-width="300" data-height="250"></ins>
+        <script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1121503});</script>
       </div>
-    </div>
-    <div class="chat-input-row">
-      <input type="text" id="chatInput" placeholder="Ask Genius anything..." onkeydown="if(event.key==='Enter')sendMsg()"/>
-      <button class="send-btn" onclick="sendMsg()">SEND</button>
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <section id="contact" class="fade-in">
   <div class="section-label">The Founder</div>
   <div class="section-title">Meet Techboy</div>
@@ -304,16 +413,13 @@ footer .footer-logo{font-family:'Orbitron',monospace;font-size:1rem;color:var(--
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-logo">TECHNET TECHNOLOGIES</div>
   <p>No Risk, No Reward — Founded by Techboy</p>
   <p style="margin-top:8px;font-size:0.75rem;">© 2024 Technet Technologies. All rights reserved.</p>
 </footer>
-
 <script>
 const SYSTEM_PROMPT = "You are Genius, the AI assistant for Technet Technologies — a tech company founded by Techboy (CEO). Keep responses concise, helpful, and enthusiastic. The company offers: website creation, software development, app development, school and shop management systems, a gaming shop (GTA 5, Spider-Man Miles Morales), live streaming, forex and binary trading via Deriv, Weltrade, and Pocket Option. Phone: +263784582053, Email: preachtafaramatambo@gmail.com, Social: @techboywayne. Company motto: No Risk No Reward.";
-
 async function sendMsg() {
   const input = document.getElementById('chatInput');
   const chatBox = document.getElementById('chatBox');
@@ -351,7 +457,6 @@ async function sendMsg() {
     appendMsg('ai', "Oops! Something went wrong. Please try again.");
   }
 }
-
 function appendMsg(role, text) {
   const chatBox = document.getElementById('chatBox');
   const div = document.createElement('div');
@@ -367,7 +472,6 @@ function appendMsg(role, text) {
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
-
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.05 });
