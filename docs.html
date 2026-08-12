@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Documentation | Technet</title>
+  <link rel="icon" type="image/x-icon" href="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/blur_on/default/24px.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .doc-sidebar { width: 250px; border-right: 1px solid var(--border-light); padding: 2rem; position: fixed; height: 100vh; overflow-y: auto; background: var(--bg-dark); }
+    .doc-content { margin-left: 250px; padding: 4rem; max-width: 900px; }
+    .doc-link { display: block; color: var(--text-muted); margin-bottom: 1rem; text-decoration: none; font-weight: 500; }
+    .doc-link:hover, .doc-link.active { color: var(--primary); }
+    .code-block { background: #000; border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 8px; font-family: monospace; color: #a1a1aa; margin: 1.5rem 0; overflow-x: auto; }
+    .method-badge { display: inline-block; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.8rem; margin-right: 10px; }
+    .method-get { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+    .method-post { background: rgba(37, 211, 102, 0.2); color: #25d366; }
+  </style>
+</head>
+<body>
+  
+  <div class="doc-sidebar">
+    <a href="index.html" class="logo" style="margin-bottom: 3rem;">
+      <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+      <div class="logo-text">Docs</div>
+    </a>
+    <h4 style="color: var(--text-main); margin-bottom: 1rem;">Getting Started</h4>
+    <a href="#intro" class="doc-link active">Introduction</a>
+    <a href="#auth" class="doc-link">Authentication</a>
+    
+    <h4 style="color: var(--text-main); margin-top: 2rem; margin-bottom: 1rem;">Endpoints</h4>
+    <a href="#users" class="doc-link">Users API</a>
+    <a href="#trading" class="doc-link">Trading Signals API</a>
+  </div>
+
+  <div class="doc-content">
+    <a href="dashboard.html" class="btn-sm" style="float: right;">Back to Dashboard</a>
+    
+    <section id="intro" style="margin-bottom: 4rem;">
+      <h1 style="font-size: 3rem; margin-bottom: 1rem;">Technet API Documentation</h1>
+      <p style="color: var(--text-muted); font-size: 1.2rem; line-height: 1.8;">Welcome to the official Technet API. Use our endpoints to integrate our user data and trading signals directly into your own applications.</p>
+    </section>
+
+    <section id="auth" style="margin-bottom: 4rem;">
+      <h2>Authentication</h2>
+      <p style="color: var(--text-muted); margin-top: 1rem;">All API requests require a Bearer token. You can generate your secret API key in the <a href="dashboard.html&bull;tab=api">Dashboard</a>.</p>
+      <div class="code-block">
+Authorization: Bearer tn_YOUR_SECRET_API_KEY_HERE
+      </div>
+    </section>
+
+    <section id="users" style="margin-bottom: 4rem;">
+      <h2>Users API</h2>
+      <div style="margin-top: 2rem; padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px;">
+        <h3 style="margin-bottom: 1rem;"><span class="method-badge method-get">GET</span> /v1/users/me</h3>
+        <p style="color: var(--text-muted);">Retrieve the authenticated user's profile information.</p>
+        <div class="code-block">
+{
+  "status": "success",
+  "data": {
+    "username": "techboywayne",
+    "email": "user@example.com",
+    "badges": ["Early Adopter"]
+  }
+}
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+

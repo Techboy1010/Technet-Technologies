@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Retail Platforms | Technet Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+<link rel="stylesheet" href="style.css"/>
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg"/>`n</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">T</div>
+    <div class="logo-text">TECHNET</div>
+  </a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="gaming.html">Gaming Hub</a>
+    <a href="trading.html">Financial Trading</a>
+    <a href="genius.html">Genius AI</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="nav-auth">
+    <a href="login.html" class="btn-auth-text"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+    <a href="register.html" class="btn-auth-primary">Register <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</nav>
+
+<div class="page-header fade-in">
+  <h1>Retail Platforms</h1>
+  <p>Modern point-of-sale, inventory management, and commerce systems for retail enterprises.</p>
+</div>
+
+<div class="content-section fade-in">
+  <div class="service-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+  <h2>Next-Generation Commerce Solutions</h2>
+  <br>
+  <p>Whether you're running a single boutique or a large-scale retail chain, our custom retail systems provide you with complete control over your business operations.</p>
+  <p>Technet Technologies develops seamless point-of-sale systems that synchronize perfectly with your inventory and online stores.</p>
+  
+  <h3>What We Offer</h3>
+  <br>
+  <ul>
+    <li><i class="fa-solid fa-check"></i> <strong>Point of Sale (POS):</strong> Fast, reliable, and user-friendly systems for rapid checkouts.</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Inventory Management:</strong> Track stock levels, set automated reordering, and prevent shrinkage.</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Analytics & Reporting:</strong> Deep insights into your best-selling items, revenue trends, and more.</li>
+    <li><i class="fa-solid fa-check"></i> <strong>Omnichannel Integration:</strong> Connect your physical storefront with your e-commerce operations.</li>
+  </ul>
+  
+  <br>
+  <a href="index.html#contact" class="btn btn-primary">Start Your Project</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TECHNET</div>
+  <div style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 600; font-style: italic; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); margin-bottom: 1.5rem;">"No Risk, No Reward"</div>
+  <p style="font-size: 0.85rem;">&copy; 2024 Technet Technologies. Founded by techboywayne & Golaz.</p>
+</footer>
+
+<!-- Auth Modal -->
+<div id="authModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-header">
+      <h3 id="modalTitle">Welcome Back</h3>
+      <p id="modalSub">Sign in to access your Technet account.</p>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Authentication system is currently in demo mode. Connect to a backend provider to enable real user authentication.'); closeAuthModal();">
+      <div class="form-group" id="nameGroup" style="display: none;">
+        <label>Full Name</label>
+        <input type="text" class="form-input" placeholder="Techboy Wayne">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" class="form-input" required placeholder="name@example.com">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-input" required placeholder="********">
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;" id="modalSubmitBtn">Sign In</button>
+    </form>
+    <div class="modal-footer">
+      <span id="modalToggleText">Don't have an account?</span> 
+      <a href="#" onclick="toggleAuthMode(); return false;" id="modalToggleLink">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

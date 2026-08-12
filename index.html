@@ -1,262 +1,436 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Technet Technologies | Zimbabwe</title>
-  <meta name="description" content="Technet Technologies — software development, AI, app design, school management systems, forex trading tools, and torrenting solutions (lawful use cases) in Zimbabwe." />
-  <meta name="keywords" content="Technet Technologies, Zimbabwe, software development, AI development, application design, school management system, forex trading tools, torrenting solutions, Techboy" />
-  <meta name="author" content="Technet Technologies" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0b0f14; /* deep slate */
-      --panel:#121923; /* card bg */
-      --muted:#9fb0c3;
-      --text:#e6eef6;
-      --brand:#e11d48; /* red accent */
-      --brand-2:#38bdf8; /* cyan accent */
-      --ring: 0 0 0 3px rgba(56,189,248,0.35);
-      --radius-2xl: 1.25rem;
-      --shadow-md: 0 8px 30px rgba(2,8,23,0.45);
-      --shadow-lg: 0 20px 60px rgba(2,8,23,0.5);
-      --maxw: 1200px;
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Technet Technologies | Professional Digital Solutions</title>
+<meta name="description" content="Technet Technologies provides professional digital solutions including software engineering, web development, mobile apps, gaming infrastructure, and AI integration. Founded by techboywayne and Golaz."/>
+<meta name="keywords" content="Technet Technologies, Techboywayne, Golaz, Software Engineering, Web Development, Mobile Apps, Genius AI, Financial Trading"/>
+<meta name="author" content="Technet Technologies"/>
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Technet Technologies | Professional Digital Solutions"/>
+<meta property="og:url" content="https://technet.org.zw/"/>
+<meta property="og:title" content="Technet Technologies | Professional Digital Solutions"/>
+<meta property="og:description" content="Technet Technologies provides professional digital solutions including software engineering, web development, mobile apps, gaming infrastructure, and AI integration."/>
+<meta property="og:image" content="https://technet.org.zw/assets/favicon.jpg"/>
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://technet.org.zw/"/>
+<meta property="twitter:title" content="Technet Technologies | Professional Digital Solutions"/>
+<meta property="twitter:description" content="Technet Technologies provides professional digital solutions including software engineering, web development, mobile apps, gaming infrastructure, and AI integration."/>
+<meta property="twitter:image" content="https://technet.org.zw/assets/favicon.jpg"/>
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Organization", "WebSite"],
+  "name": "Technet Technologies",
+  "url": "https://technet.org.zw/",
+  "logo": "https://technet.org.zw/assets/favicon.jpg",
+  "description": "Technet Technologies provides professional digital solutions including software engineering, web development, mobile apps, gaming infrastructure, and AI integration.",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Preach Tafara Matambo (techboywayne)"
+    },
+    {
+      "@type": "Person",
+      "name": "Tadiwanashe P.N Mariramombe (Golaz)"
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:radial-gradient(1000px 600px at 90% -10%,rgba(56,189,248,0.12),transparent),
-                                   radial-gradient(900px 600px at -10% 110%,rgba(225,29,72,0.12),transparent),
-                                   var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
-    /* NAV */
-    .nav{position:sticky;top:0;background:rgba(11,15,20,0.7);backdrop-filter:saturate(140%) blur(10px);z-index:50;border-bottom:1px solid rgba(148,163,184,0.15)}
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0}
-    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.3px}
-    .logo{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--brand),#7c0f2b);box-shadow:var(--shadow-md)}
-    .logo i{width:22px;height:22px;border-radius:4px;background:linear-gradient(135deg,var(--brand-2),#2563eb)}
-    .nav a.link{padding:.6rem .9rem;border-radius:999px;color:var(--muted)}
-    .nav a.link:hover{color:var(--text);background:rgba(148,163,184,0.08)}
-    .cta{padding:.65rem 1rem;border-radius:999px;background:linear-gradient(135deg,var(--brand),#fb7185);border:1px solid rgba(255,255,255,0.1);box-shadow:var(--shadow-md);font-weight:600}
-    .cta:hover{filter:brightness(1.05)}
-    /* HERO */
-    .hero{padding:5rem 0 3rem;position:relative}
-    .hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.05;margin:0 0 1rem}
-    .hero p{font-size:clamp(1rem,1.6vw,1.2rem);color:var(--muted);max-width:800px}
-    .badges{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.25rem 0 2rem}
-    .badge{border:1px solid rgba(148,163,184,0.2);padding:.45rem .7rem;border-radius:999px;color:#cbd5e1;background:rgba(148,163,184,0.06)}
-    .hero-cards{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:2.5rem}
-    .card{grid-column:span 4;background:var(--panel);border:1px solid rgba(148,163,184,0.15);border-radius:var(--radius-2xl);padding:1.25rem;box-shadow:var(--shadow-md)}
-    .card h3{margin:.3rem 0 .5rem;font-size:1.1rem}
-    .card p{margin:0;color:var(--muted);font-size:.98rem}
-    @media (max-width:960px){.card{grid-column:span 6}} 
-    @media (max-width:640px){.card{grid-column:span 12}}
-    /* SECTION */
-    section{padding:4.5rem 0;border-top:1px solid rgba(148,163,184,0.12)}
-    h2.section-title{font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 1rem}
-    .muted{color:var(--muted)}
-    /* SERVICES */
-    .services{display:grid;grid-template-columns:repeat(12,1fr);gap:1rem;margin-top:1.75rem}
-    .service{grid-column:span 4;background:linear-gradient(180deg,rgba(56,189,248,0.08),transparent),var(--panel);border:1px solid rgba(148,163,184,0.18);border-radius:var(--radius-2xl);padding:1.25rem;transition:transform .2s ease, box-shadow .2s ease}
-    .service:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-    .service h3{margin:.2rem 0 .4rem}
-    .service small{color:#cbd5e1}
-    @media (max-width:960px){.service{grid-column:span 6}} 
-    @media (max-width:640px){.service{grid-column:span 12}}
-    /* CTA BAR */
-    .cta-bar{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.25rem}
-    .ghost{padding:.65rem 1rem;border-radius:999px;border:1px solid rgba(148,163,184,0.25);background:transparent;color:var(--text);font-weight:600}
-    .ghost:hover{background:rgba(148,163,184,0.08)}
-    /* ABOUT */
-    .about{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:start}
-    .keypoints{display:grid;gap:.75rem}
-    .kp{background:var(--panel);border:1px solid rgba(148,163,184,0.15);border-radius:1rem;padding:1rem}
-    @media (max-width:900px){.about{grid-template-columns:1fr}}
-    /* CONTACT */
-    form{display:grid;gap:.9rem;margin-top:1rem}
-    input,textarea{width:100%;padding:.85rem 1rem;border-radius:.9rem;border:1px solid rgba(148,163,184,0.2);background:#0d141d;color:var(--text)}
-    input:focus,textarea:focus{outline:none;box-shadow:var(--ring);border-color:#67e8f9}
-    button[type="submit"]{padding:.9rem 1.2rem;border-radius:.9rem;background:linear-gradient(135deg,var(--brand-2),#2563eb);color:white;border:none;font-weight:700;box-shadow:var(--shadow-md)}
-    .footer{padding:2rem 0;border-top:1px solid rgba(148,163,184,0.12);color:var(--muted)}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    @media (max-width:800px){.grid-2{grid-template-columns:1fr}}
-    .tag{display:inline-flex;align-items:center;gap:.45rem;padding:.35rem .6rem;border-radius:.6rem;background:rgba(148,163,184,0.12);color:#dbeafe;border:1px solid rgba(148,163,184,0.22);font-size:.85rem}
-  </style>
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "technettechnologies01@gmail.com",
+    "contactType": "customer support"
+  }
+}
+</script>
+
+<!-- Modern, premium fonts: Outfit for headings, Inter for body text -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<link rel="stylesheet" href="style.css"/>
+<link rel="icon" type="image/jpeg" href="assets/favicon.jpg"/>
+
+<!-- Google AdSense Placeholder -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9827980759971902" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#home" aria-label="Technet Technologies Home">
-        <span class="logo" aria-hidden="true"><i></i></span>
-        <span>Technet <span style="color:var(--brand-2)">Technologies</span></span>
-      </a>
-      <div>
-        <a class="link" href="#services">Services</a>
-        <a class="link" href="#about">About</a>
-        <a class="link" href="#contact">Contact</a>
-        <a class="cta" href="mailto:hello@technet.co.zw">Get a Quote</a>
+
+<nav>
+  <a href="#" class="logo" style="display: flex; align-items: center; gap: 10px;">
+    <img src="assets/favicon.jpg" alt="Technet Icon" style="width: 36px; height: 36px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 240, 255, 0.5);">
+    <div class="logo-text">TECHNET</div>
+  </a>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="gaming.html">Gaming Hub</a>
+    <a href="trading.html">Financial Trading</a>
+    <a href="genius.html">Genius AI</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="nav-auth">
+    <a href="login.html" class="btn-auth-text"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+    <a href="register.html" class="btn-auth-primary">Register <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Est. by techboywayne</div>
+  <h1>Technet <span>Technologies</span></h1>
+  <div style="font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 600; font-style: italic; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); margin-bottom: 2rem; margin-top: -0.5rem;">"No Risk, No Reward"</div>
+  <div class="hero-typewriter-container">
+    <span class="static-text">We build the future of</span>
+    <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
+  </div>
+  <p class="hero-sub">A premium Tech Company offering the best service in digital innovation. We architect industry-leading solutions designed to scale, dominate, and transform your vision into reality.</p>
+  <div class="hero-btns">
+    <button class="btn btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
+    <button class="btn btn-outline" onclick="document.getElementById('genius').scrollIntoView({behavior:'smooth'})">Chat with Genius AI</button>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section id="services" class="fade-in">
+  <div class="section-label">Digital Solutions</div>
+  <h2 class="section-title">Professional Services</h2>
+  <div class="overview-section">
+    <div class="overview-text">
+      <h3 style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem); font-family: 'Outfit', sans-serif;">Transforming Business Through Technology</h3>
+      <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 500px;">At Technet Technologies, we don't just write code &mdash; we engineer digital ecosystems. From high-performance web applications to scalable cloud architectures and dedicated mobile experiences, our enterprise solutions are built to dominate.</p>
+      <a href="services.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">Explore All Services <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="overview-image">
+      <img src="assets/software_service_1786219654811.jpg" alt="Enterprise Solutions" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="gaming" class="fade-in">
+  <div class="overview-section">
+    <div class="overview-image">
+      <img src="assets/gaming_overview_1786220307610.jpg" alt="Gaming & Broadcasting" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    </div>
+    <div class="overview-text">
+      <h3 style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem); font-family: 'Outfit', sans-serif;">Premium Entertainment Hub</h3>
+      <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 500px;">Access top-tier game distribution, live gameplay streaming, and competitive community tournaments. Your ultimate destination for immersive entertainment.</p>
+      <a href="gaming.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">Enter Gaming Hub <i class="fa-solid fa-gamepad"></i></a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="trading" class="fade-in">
+  <div class="overview-section">
+    <div class="overview-text">
+      <h3 style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem); font-family: 'Outfit', sans-serif;">Global Financial Markets</h3>
+      <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 500px;">Execute trades with precision. We partner with industry-leading brokers to provide you with exclusive benefits, ultra-tight spreads, and world-class financial tools.</p>
+      <a href="trading.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">Explore Trading <i class="fa-solid fa-chart-line"></i></a>
+    </div>
+    <div class="overview-image">
+      <img src="assets/trading_overview_1786220319834.jpg" alt="Financial Trading" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="genius" class="fade-in">
+  <div class="overview-section">
+    <div class="overview-image">
+      <img src="assets/ai_overview_1786220330720.jpg" alt="Genius AI" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    </div>
+    <div class="overview-text">
+      <h3 style="margin-bottom: 1rem; font-size: clamp(1.8rem, 4vw, 2.5rem); font-family: 'Outfit', sans-serif;">Intelligent AI Assistance</h3>
+      <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; font-size: 1.1rem; max-width: 500px;">Experience the future of automated support. Genius AI is engineered to provide instant answers, powerful analytics, and tailored guidance.</p>
+      <a href="genius.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">Chat with Genius <i class="fa-solid fa-robot"></i></a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="our-story" class="fade-in" style="padding-bottom: 2rem;">
+  <div class="section-label">Where It Began</div>
+  <h2 class="section-title">Our Story</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem;">
+    <div style="flex: 1; min-width: 300px;">
+      <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);">Founded in 2024</h3>
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem;">
+        Technet Technologies was officially founded in 2024 at the St Anthony's High School dormitories. The vision began while the founders were rigorously studying Maths, Physics, and Computer Science, turning their shared passion for technology into a global enterprise.
+      </p>
+      <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7;">
+        We owe a huge debt of gratitude to our inspiring teachers who shaped our foundation: <strong>Mr. Masvaya T</strong> (Computer Science), <strong>Mr. Mutero</strong> (Physics), and <strong>Mr. Nzvimba</strong> (Pure Mathematics).
+      </p>
+    </div>
+    <div class="origin-carousel-container" style="flex: 1; min-width: 300px; position: relative; height: 400px; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+      <img src="assets/origin1.jpg" alt="Founders at St Anthony's High School" class="carousel-slide active">
+      <img src="assets/origin2.jpg" alt="Founders at St Anthony's High School" class="carousel-slide">
+      <img src="assets/origin3.jpg" alt="Founders at St Anthony's High School" class="carousel-slide">
+      <img src="assets/origin4.jpg" alt="Founders at St Anthony's High School" class="carousel-slide">
+      <div class="carousel-indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <header id="home" class="hero">
-    <div class="wrap">
-      <div class="badges">
-        <span class="badge">Proudly Zimbabwean • <strong>technet.co.zw</strong></span>
-        <span class="badge">CEO: <strong>Techboy</strong></span>
-      </div>
-      <h1>Building bold software for real‑world impact.</h1>
-      <p>We design and ship production‑grade solutions across web, mobile, and AI. From school management platforms to forex trading tools and lawful torrenting infrastructure, we turn complex ideas into clean, fast systems.</p>
-      <div class="cta-bar">
-        <a class="cta" href="#contact">Start a Project</a>
-        <a class="ghost" href="#services">Explore Services</a>
-      </div>
+<div class="divider"></div>
 
-      <div class="hero-cards">
-        <div class="card">
-          <h3>Software Development</h3>
-          <p>Full‑stack web & desktop apps with modern architectures (APIs, microservices, cloud‑native).</p>
-        </div>
-        <div class="card">
-          <h3>AI Development</h3>
-          <p>ML pipelines, LLM integrations, chatbots, and computer vision — built with responsibility in mind.</p>
-        </div>
-        <div class="card">
-          <h3>App Design</h3>
-          <p>Human‑centered UI/UX for Android, iOS, and cross‑platform frameworks. Prototype to store‑ready.</p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <div class="wrap">
-      <h2 class="section-title">Services</h2>
-      <p class="muted">End‑to‑end delivery. Clear communication. Strong security posture.</p>
-      <div class="services">
-        <div class="service">
-          <h3>Software Development</h3>
-          <small>Web • Desktop • APIs</small>
-          <p>Custom systems using resilient patterns, CI/CD, and modern stacks. Clean code, clean docs.</p>
-        </div>
-        <div class="service">
-          <h3>Forex Trading Tools</h3>
-          <small>Data • Automation • Risk Notes</small>
-          <p>Backtesting dashboards, signal tooling, and integrations. <em>Educational tools — not financial advice.</em></p>
-        </div>
-        <div class="service">
-          <h3>Application Design</h3>
-          <small>Android • iOS • Cross‑platform</small>
-          <p>Wireframes, prototypes, and polished UI kits that translate directly into development.</p>
-        </div>
-        <div class="service">
-          <h3>School Management Systems</h3>
-          <small>Students • Parents • Staff</small>
-          <p>Attendance, grading, results portals, fee tracking, communication, and analytics dashboards.</p>
-        </div>
-        <div class="service">
-          <h3>Torrenting Solutions</h3>
-          <small>P2P • Distribution • Compliance</small>
-          <p>Private trackers and P2P distribution for lawful content (e.g., large asset delivery, FOSS mirroring). We do not support piracy.</p>
-        </div>
-        <div class="service">
-          <h3>AI Development</h3>
-          <small>LLMs • CV • NLP</small>
-          <p>Chatbots, RAG, detection & classification, and automation — with evaluation & monitoring built‑in.</p>
-        </div>
-      </div>
-      <div class="cta-bar">
-        <a class="cta" href="#contact">Get Pricing</a>
-        <a class="ghost" href="#faq">View FAQs</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="wrap about">
-      <div>
-        <h2 class="section-title">About Technet Technologies</h2>
-        <p class="muted">Based in Zimbabwe, Technet Technologies builds software that respects users and scales with your ambitions. Led by <strong>Techboy</strong>, our multidisciplinary crew blends engineering, product, and design.</p>
-        <div class="keypoints">
-          <div class="kp"><strong>Security‑first:</strong> OAuth2, 2FA, and defense‑in‑depth by default.</div>
-          <div class="kp"><strong>Cloud‑native:</strong> Containers, CI/CD, observability, and cost‑aware infra.</div>
-          <div class="kp"><strong>Education‑friendly:</strong> Tools that actually help teachers, students, and parents.</div>
-        </div>
-      </div>
-      <div>
-        <div class="kp">
-          <div class="tag">HQ: Zimbabwe</div>
-          <div class="tag">Domain: technet.co.zw</div>
-          <div class="tag">Email: hello@technet.co.zw</div>
-          <div class="tag">CEO: Techboy</div>
-        </div>
-        <div class="kp" style="margin-top:.9rem">
-          <strong>Note:</strong> Forex trading involves risk. Our software is educational and tool‑ing only and does not constitute financial advice. Always trade responsibly.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="wrap">
-      <h2 class="section-title">FAQs</h2>
-      <div class="grid-2">
-        <div class="kp"><strong>Do you host and manage domains?</strong><br/>Yes — we can help register a <code>.co.zw</code> domain (e.g., <code>technet.co.zw</code>) and set up DNS, email, and SSL.</div>
-        <div class="kp"><strong>What stacks do you use?</strong><br/>Modern JS/TS, Python, JVM, and cloud‑native tooling — chosen to fit the problem, not force it.</div>
-        <div class="kp"><strong>Is torrenting legal?</strong><br/>Torrent technology is legal; distributing copyrighted content without authorization is not. We only support lawful use cases.</div>
-        <div class="kp"><strong>How do we start?</strong><br/>Send a brief to <a href="mailto:hello@technet.co.zw">hello@technet.co.zw</a> and we’ll set up a discovery call.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap">
-      <h2 class="section-title">Contact</h2>
-      <p class="muted">Tell us a bit about your project and we’ll reply within 1–2 business days.</p>
-      <form onsubmit="event.preventDefault(); alert('Thanks! We\'ll get back to you via email.');">
-        <div class="grid-2">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Your full name" required />
+<section id="contact" class="fade-in">
+  <div class="section-label">Get In Touch</div>
+  <h2 class="section-title">Contact Us</h2>
+  
+  <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem;">
+    <a href="https://whatsapp.com/channel/0029VbDBynABA1es14fPlV1A" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 14px 28px; background: #25D366; color: white; border: none; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem;"></i> Join Our WhatsApp
+    </a>
+    <a href="https://t.me/technettechnologies" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 14px 28px; background: #0088cc; color: white; border: none; box-shadow: 0 5px 20px rgba(0, 136, 204, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <i class="fa-brands fa-telegram" style="font-size: 1.4rem;"></i> Join Our Telegram
+    </a>
+    <a href="https://instagram.com/technet_technologies" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 14px 28px; background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border: none; box-shadow: 0 5px 20px rgba(220, 39, 67, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <i class="fa-brands fa-instagram" style="font-size: 1.4rem;"></i> Follow Our Instagram
+    </a>
+    <a href="https://tiktok.com/@technet_technologies" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 14px 28px; background: #010101; color: white; border: none; box-shadow: 0 5px 20px rgba(1, 1, 1, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <i class="fa-brands fa-tiktok" style="font-size: 1.4rem;"></i> Follow Our TikTok
+    </a>
+    <a href="https://youtube.com/@technettechnologies" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 10px; font-size: 1.1rem; padding: 14px 28px; background: #FF0000; color: white; border: none; box-shadow: 0 5px 20px rgba(255, 0, 0, 0.4); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+      <i class="fa-brands fa-youtube" style="font-size: 1.4rem;"></i> Subscribe on YouTube
+    </a>
+  </div>
+  
+  <div class="contact-grid">
+    <!-- Left: Founder Cards -->
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+      <div class="founder-card" style="margin: 0; max-width: none; padding: 2.5rem;">
+        <img src="assets/founder.jpg" alt="techboywayne" class="founder-avatar" style="object-fit: cover; display: block;">
+        <div class="founder-info">
+          <h3 style="margin-bottom: 0.2rem;">techboywayne</h3>
+          <h4 style="font-weight: 500; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.25rem;">Preach Tafara Matambo</h4>
+          <div class="founder-title">Founder & CEO</div>
+          <div class="contact-list">
+            <a href="tel:+263718294344"><i class="fa-solid fa-phone" style="margin-right:8px; color: var(--primary);"></i> +263 718 294 344</a>
+            <a href="mailto:technettechnologies01@gmail.com"><i class="fa-solid fa-envelope" style="margin-right:8px; color: var(--primary);"></i> technettechnologies01@gmail.com</a>
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="you@company.com" required />
+          <div class="socials">
+            <a href="https://instagram.com/techboywayne" target="_blank" class="social-badge" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com/@techboywayne" target="_blank" class="social-badge" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com/techboywayne" target="_blank" class="social-badge" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/263718294344" target="_blank" class="social-badge" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://linkedin.com/in/techboywayne" target="_blank" class="social-badge" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/techboywayne" target="_blank" class="social-badge" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://twitch.tv/techboywayne" target="_blank" class="social-badge" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
+            <a href="https://youtube.com/@techboywayne" target="_blank" class="social-badge" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
-        <label for="subject">Subject</label>
-        <input id="subject" name="subject" placeholder="Project / idea / question" />
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tell us what you want to build…"></textarea>
-        <button type="submit">Send Message</button>
+      </div>
+      
+      <div class="founder-card" style="margin: 0; max-width: none; padding: 2.5rem;">
+        <div class="founder-avatar" style="background: linear-gradient(135deg, var(--primary), var(--accent));">G</div>
+        <div class="founder-info">
+          <h3 style="margin-bottom: 0.2rem;">Golaz</h3>
+          <h4 style="font-weight: 500; font-size: 1.1rem; color: var(--text-main); margin-bottom: 0.25rem;">Tadiwanashe P.N Mariramombe</h4>
+          <div class="founder-title">Co-Founder & CEO</div>
+          <div class="contact-list">
+            <a href="tel:+263786656693"><i class="fa-solid fa-phone" style="margin-right:8px; color: var(--primary);"></i> +263 78 665 6693</a>
+          </div>
+          <div class="socials">
+            <a href="https://instagram.com/techboywayne" target="_blank" class="social-badge" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com/@techboywayne" target="_blank" class="social-badge" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://facebook.com/techboywayne" target="_blank" class="social-badge" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://wa.me/263786656693" target="_blank" class="social-badge" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://linkedin.com/in/techboywayne" target="_blank" class="social-badge" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://x.com/techboywayne" target="_blank" class="social-badge" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://twitch.tv/techboywayne" target="_blank" class="social-badge" title="Twitch"><i class="fa-brands fa-twitch"></i></a>
+            <a href="https://youtube.com/@techboywayne" target="_blank" class="social-badge" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="contact-form-wrapper">
+      <h3>Send a Direct Email</h3>
+      <form action="https://formsubmit.co/technettechnologies01@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Direct Message from Technet Website!">
+        <input type="hidden" name="_next" value="https://technet.org.zw">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" name="name" class="form-input" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Your Email Address</label>
+          <input type="email" name="email" class="form-input" required placeholder="john@example.com">
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" class="form-input" rows="4" required placeholder="How can we help you&bull;"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Send Email to Technet</button>
       </form>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="wrap grid-2">
-      <div>
-        <strong>Technet Technologies</strong><br/>
-        <span class="muted">© <span id="y"></span> Technet Technologies. All rights reserved.</span>
+  </div>
+  
+  <div class="location-card" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem; margin-top: 2rem;">
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
+      <div style="flex: 1; min-width: 300px;">
+        <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-bottom: 1rem; color: var(--primary);"><i class="fa-solid fa-location-dot"></i> Global Headquarters</h3>
+        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
+          Technet Technologies is proudly based in <strong>Jerera, Zimbabwe</strong>. However, our advanced digital infrastructure allows our team to <strong>operate 100% remotely</strong>, serving clients and scaling our technological solutions worldwide. We deliver premium results regardless of borders.
+        </p>
+        <div style="display: flex; gap: 1rem; align-items: center; color: var(--text-main); font-weight: 500;">
+          <i class="fa-solid fa-earth-americas" style="font-size: 1.5rem; color: var(--accent);"></i>
+          <span>Remote-First. Globally Connected.</span>
+        </div>
       </div>
-      <div style="text-align:right">
-        <a href="#home" class="link">Back to top ↑</a>
+      <div style="flex: 1; min-width: 300px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30245.969634938686!2d31.651717208882522!3d-20.024227848247076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x72d2fbb0f8623b7b%3A0xc3bba4d293155708!2sJerera%2C%20Zimbabwe!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="250" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
+<div class="divider"></div>
 
-  <script>
-    // year stamp
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
+<section id="donate" class="fade-in" style="padding: 2rem 0;">
+  <div style="background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(10,10,10,0.9)); border: 1px solid var(--border-light); border-radius: 16px; padding: 3rem; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    <h2 style="margin-bottom: 1rem; font-family: 'Outfit', sans-serif; font-size: 2.2rem;">Support Technet Technologies</h2>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2rem auto; line-height: 1.6; font-size: 1.1rem;">
+      If you love what we're building, consider supporting us. Your contributions help us innovate faster, build better AI, and deliver premium digital experiences to the world.
+    </p>
+    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <button onclick="openDonateModal()" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer; padding: 14px 28px; font-size: 1.1rem;"><i class="fa-solid fa-heart" style="color: #ff4757;"></i> Support via EcoCash & Innbucks</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">TECHNET</div>
+  <div style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 600; font-style: italic; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0, 240, 255, 0.4); margin-bottom: 1.5rem;">"No Risk, No Reward"</div>
+  <p style="font-size: 0.85rem;">&copy; 2024 Technet Technologies. Founded by techboywayne & Golaz.</p>
+</footer>
+
+  </div>
+</div>
+
+<!-- Donate Modal -->
+<div id="donateModal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 999999; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+  <div class="modal-content" style="background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 16px; padding: 2.5rem; max-width: 450px; width: 90%; position: relative; box-shadow: 0 15px 50px rgba(0,0,0,0.8);">
+    <button class="modal-close" onclick="closeDonateModal()" style="position: absolute; top: 15px; right: 15px; background: transparent; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; transition: color 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+    
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <i class="fa-solid fa-hand-holding-dollar" style="font-size: 3rem; color: #25D366; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(37,211,102,0.4));"></i>
+      <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff;">Support Technet</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Send your support directly via local mobile money.</p>
+    </div>
+    
+    <div style="background: rgba(255,255,255,0.03); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border: 1px solid rgba(255,255,255,0.05);">
+      <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Account Name</div>
+      <div style="font-size: 1.2rem; font-weight: 600; color: #fff; margin-bottom: 1.5rem;"><i class="fa-solid fa-user" style="color: var(--primary); margin-right: 8px;"></i> Preach Tafara Matambo</div>
+      
+      <div style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Phone Number</div>
+      <div style="font-size: 1.6rem; font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--primary); letter-spacing: 2px;"><i class="fa-solid fa-mobile-screen" style="color: #fff; margin-right: 8px;"></i> 078 458 2053</div>
+    </div>
+    
+    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 1.5rem;">
+      <div style="background: rgba(37,211,102,0.1); color: #25D366; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(37,211,102,0.3);"><i class="fa-solid fa-check"></i> EcoCash</div>
+      <div style="background: rgba(255,153,0,0.1); color: #ff9900; padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(255,153,0,0.3);"><i class="fa-solid fa-check"></i> Innbucks</div>
+    </div>
+  </div>
+</div>
+
+<!-- Auth Modal -->
+<div id="authModal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-header" style="text-align: center;">
+      <img src="assets/favicon.jpg" alt="Technet" style="width: 48px; height: 48px; border-radius: 12px; box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); margin-bottom: 1rem;">
+      <h3 id="modalTitle" style="font-family: 'Outfit', sans-serif; font-size: 1.8rem; margin-bottom: 0.5rem;">Welcome Back</h3>
+      <p id="modalSub" style="color: var(--text-muted); font-size: 0.95rem;">Sign in to continue to Technet Technologies.</p>
+    </div>
+    
+    <div class="social-login-container" style="display: flex; gap: 10px; margin-bottom: 1.5rem;">
+      <button class="social-login-btn"><i class="fa-brands fa-google"></i> Google</button>
+      <button class="social-login-btn"><i class="fa-brands fa-apple"></i> Apple</button>
+      <button class="social-login-btn"><i class="fa-brands fa-github"></i> GitHub</button>
+    </div>
+    
+    <div class="auth-separator" style="display: flex; align-items: center; text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+      <div style="flex: 1; border-bottom: 1px solid var(--border-light);"></div>
+      <span style="padding: 0 10px;">or continue with email</span>
+      <div style="flex: 1; border-bottom: 1px solid var(--border-light);"></div>
+    </div>
+
+    <form onsubmit="event.preventDefault(); alert('Authentication system is currently in demo mode. Connect to a backend provider to enable real user authentication.'); closeAuthModal();">
+      <div class="form-group" id="nameGroup" style="display: none;">
+        <label>Full Name</label>
+        <div class="input-with-icon">
+          <i class="fa-regular fa-user"></i>
+          <input type="text" class="form-input" placeholder="e.g. John Doe" style="padding-left: 2.5rem;">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-with-icon">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="email" class="form-input" required placeholder="name@example.com" style="padding-left: 2.5rem;">
+        </div>
+      </div>
+      <div class="form-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <label style="margin-bottom: 0;">Password</label>
+          <a href="#" onclick="alert('Password reset link sent to your email.'); return false;" style="font-size: 0.8rem; color: var(--primary); text-decoration: none;" id="forgotPasswordLink">Forgot Password?</a>
+        </div>
+        <div class="input-with-icon">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="authPasswordInput" class="form-input" required placeholder="ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¢" style="padding-left: 2.5rem; padding-right: 2.5rem;">
+          <i class="fa-regular fa-eye" id="togglePasswordIcon" onclick="togglePasswordVisibility()" style="left: auto; right: 14px; cursor: pointer; pointer-events: all;"></i>
+        </div>
+        <div id="authRequirements" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 6px; border: 1px dashed var(--border-light); line-height: 1.5;"></div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; padding: 14px; font-size: 1.05rem;" id="modalSubmitBtn">Sign In</button>
+    </form>
+    
+    <div class="modal-footer" style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+      <span id="modalToggleText">Don't have an account?</span> 
+      <a href="#" onclick="toggleAuthMode(); return false;" id="modalToggleLink" style="color: var(--primary); font-weight: 600; text-decoration: none; margin-left: 5px;">Sign Up</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

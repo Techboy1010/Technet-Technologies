@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Technet Technologies</title>
+  
+  <link rel="icon" type="image/x-icon" href="https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/blur_on/default/24px.svg">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+
+<!-- Google AdSense Placeholder -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9827980759971902" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Minimal Navbar for Dashboard -->
+  <nav style="justify-content: space-between;">
+    <a href="index.html" class="logo">
+      <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+      <div class="logo-text">Technet Dashboard</div>
+    </a>
+  <div class="nav-auth" id="navAuth">
+      <!-- Auth state will be injected here by main.js -->
+    </div>
+  </nav>
+
+  <div id="verificationBanner" style="display: none; background: rgba(245, 158, 11, 0.2); border-bottom: 1px solid rgba(245, 158, 11, 0.4); padding: 1rem; text-align: center; color: var(--gold); font-size: 0.95rem; font-weight: 500;">
+    <i class="fa-solid fa-triangle-exclamation" style="margin-right: 8px;"></i>
+    Please verify your email address to unlock all account features. Check your inbox for the verification link. 
+    <button onclick="resendVerification()" class="btn-sm" style="margin-left: 10px; background: transparent; border: 1px solid var(--gold); color: var(--gold);">Resend Email</button>
+  </div>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="dash-sidebar">
+      <div class="sidebar-group">
+        <h4>Personal</h4>
+        <a href="#profile" class="dash-link active" data-tab="profile"><i class="fa-regular fa-user"></i> Your profile</a>
+        <a href="#api" class="dash-link" data-tab="api"><i class="fa-solid fa-sparkles"></i> API Access</a>
+        <a href="#achievements" class="dash-link" data-tab="achievements"><i class="fa-solid fa-medal"></i> Achievements</a>
+        <a href="#devcard" class="dash-link" data-tab="devcard"><i class="fa-solid fa-address-card"></i> DevCard</a>
+      </div>
+      <div class="sidebar-group">
+        <h4>Workspace</h4>
+        <a href="#analytics" class="dash-link" data-tab="analytics"><i class="fa-solid fa-chart-simple"></i> Analytics</a>
+        <a href="#settings" class="dash-link" data-tab="settings"><i class="fa-solid fa-gear"></i> Settings</a>
+        <a href="#subscriptions" class="dash-link" data-tab="subscriptions"><i class="fa-regular fa-credit-card"></i> Subscriptions</a>
+        <a href="#organizations" class="dash-link" data-tab="organizations"><i class="fa-regular fa-building"></i> Organizations</a>
+        <a href="#invite" class="dash-link" data-tab="invite"><i class="fa-solid fa-user-plus"></i> Invite friends</a>
+      </div>
+      <div class="sidebar-group">
+        <h4>Resources</h4>
+        <a href="changelog.html" class="dash-link external"><i class="fa-solid fa-code-commit"></i> Changelog</a>
+        <a href="docs.html" class="dash-link external"><i class="fa-solid fa-book"></i> Docs</a>
+        <a href="index.html#contact" class="dash-link external"><i class="fa-regular fa-life-ring"></i> Support</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dash-content">
+      
+      <!-- Profile Tab -->
+      <section id="tab-profile" class="tab-pane active fade-in">
+        <div class="dash-header">
+          <h2>Your Profile</h2>
+          <p>Manage your account settings and personal information.</p>
+        </div>
+        <div class="dash-card">
+          <div style="display: flex; gap: 2rem; align-items: center; margin-bottom: 2rem;">
+            <div style="position: relative; cursor: pointer;" onclick="document.getElementById('avatarUpload').click()" title="Click to change avatar">
+              <div class="profile-avatar-large" id="dashAvatar" style="overflow: hidden;">U</div>
+              <div style="position: absolute; bottom: 0; right: 0; background: var(--primary); padding: 6px; border-radius: 50%; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.5);">
+                <i class="fa-solid fa-camera" style="font-size: 0.8rem; color: white;"></i>
+              </div>
+            </div>
+            <input type="file" id="avatarUpload" accept="image/png, image/jpeg, image/gif" style="display: none;" onchange="uploadAvatar(event)">
+            <div>
+              <h3 id="dashName">Loading...</h3>
+              <p style="color: var(--text-muted);" id="dashUsername">@loading</p>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="dashEmail" class="form-input" disabled style="opacity: 0.7;">
+          </div>
+          <button class="btn btn-primary" onclick="alert('Profile update coming soon!')">Save Changes</button>
+        </div>
+      </section>
+
+      <!-- API Access Tab -->
+      <section id="tab-api" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>API Access</h2>
+          <p>Generate and manage your Technet Developer API keys.</p>
+        </div>
+        <div class="dash-card api-card">
+          <div class="api-status">
+            <div class="status-indicator active"></div>
+            <span>API Gateway Online</span>
+          </div>
+          <h3>Your Secret Key</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">Keep this key secret. Do not expose it in public repositories.</p>
+          <div class="api-key-box">
+            <input type="password" id="apiKeyDisplay" value="************************" readonly>
+            <button onclick="revealAndCopyApiKey()" class="btn-sm"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <button class="btn btn-outline" style="margin-top: 1rem;" onclick="generateNewApiKey()">Generate New Key</button>
+        </div>
+      </section>
+
+      <!-- Achievements Tab -->
+      <section id="tab-achievements" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>Achievements</h2>
+          <p>Badges earned across the Technet ecosystem.</p>
+        </div>
+        <div class="achievements-grid">
+          <div class="achievement-badge earned">
+            <i class="fa-solid fa-rocket" style="color: #3b82f6;"></i>
+            <span>Early Adopter</span>
+          </div>
+          <div class="achievement-badge earned">
+            <i class="fa-solid fa-code" style="color: #8b5cf6;"></i>
+            <span>First Commit</span>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fa-solid fa-crown"></i>
+            <span>Pro Trader</span>
+          </div>
+          <div class="achievement-badge locked">
+            <i class="fa-solid fa-bug"></i>
+            <span>Bug Hunter</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- DevCard Tab -->
+      <section id="tab-devcard" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>DevCard</h2>
+          <p>Your public developer identity card.</p>
+        </div>
+        <div class="devcard-preview">
+          <div class="devcard-inner">
+            <div class="dc-top">
+              <i class="fa-solid fa-bolt" style="color: var(--primary); font-size: 1.5rem;"></i>
+              <span style="font-family: 'Outfit'; font-weight: bold;">Technet Dev</span>
+            </div>
+            <div class="dc-middle" style="margin: 2rem 0;">
+              <h2 id="dcName" style="font-size: 2rem; margin-bottom: 0;">Name</h2>
+              <p id="dcUsername" style="color: var(--primary);">@username</p>
+            </div>
+            <div class="dc-bottom" style="display: flex; gap: 2rem; color: var(--text-muted);">
+              <div><strong style="color: var(--text-main);">0</strong> Followers</div>
+              <div><strong style="color: var(--text-main);">2</strong> Badges</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics Tab -->
+      <section id="tab-analytics" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>Analytics</h2>
+          <p>Overview of your API usage and platform activity.</p>
+        </div>
+        <div class="analytics-grid">
+          <div class="dash-card stat-card">
+            <h4>Total API Calls</h4>
+            <h2>1,284</h2>
+            <span class="positive">+12% this week</span>
+          </div>
+          <div class="dash-card stat-card">
+            <h4>Success Rate</h4>
+            <h2>99.9%</h2>
+            <span class="positive">Stable</span>
+          </div>
+          <div class="dash-card stat-card">
+            <h4>Latency</h4>
+            <h2>45ms</h2>
+            <span class="negative">+5ms this week</span>
+          </div>
+        </div>
+        <div class="dash-card" style="margin-top: 2rem; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border-light); background: transparent;">
+          <p style="color: var(--text-muted);"><i class="fa-solid fa-chart-line"></i> Chart data will populate here as usage increases.</p>
+        </div>
+      </section>
+
+      <!-- Settings Tab -->
+      <section id="tab-settings" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>Account Settings</h2>
+        </div>
+        <div class="dash-card">
+          <h3 style="margin-bottom: 1rem; color: #ff4757;">Danger Zone</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1rem;">Once you delete your account, there is no going back. Please be certain.</p>
+          <button class="btn btn-outline" style="border-color: #ff4757; color: #ff4757;" onclick="alert('Account deletion requires contacting support.')">Delete Account</button>
+        </div>
+      </section>
+
+      <!-- Subscriptions Tab -->
+      <section id="tab-subscriptions" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>Billing & Subscriptions</h2>
+          <p>Manage your active plans and upgrade your account.</p>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+          <!-- Free Tier -->
+          <div class="dash-card" style="border: 1px solid var(--border-light);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="color: var(--text-main);">Hobby Plan</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.2rem;">Perfect for side projects.</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; color: var(--text-muted);">Current</div>
+            </div>
+            <div style="font-size: 2.5rem; font-weight: 800; font-family: 'Outfit'; margin-bottom: 1.5rem;">$0<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+            <ul style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.95rem;">
+              <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="margin-right: 8px;"></i> 1,000 API Requests / day</li>
+              <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="margin-right: 8px;"></i> Standard Support</li>
+              <li style="margin-bottom: 0.5rem; opacity: 0.4;"><i class="fa-solid fa-xmark" style="margin-right: 8px;"></i> No Access to Genius AI</li>
+            </ul>
+            <button class="btn btn-outline" style="width: 100%; opacity: 0.5; cursor: not-allowed;" disabled>Active</button>
+          </div>
+
+          <!-- Pro Tier -->
+          <div class="dash-card" style="border: 1px solid var(--primary); box-shadow: 0 0 20px rgba(0, 240, 255, 0.15); position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 15px; right: -30px; background: var(--primary); color: var(--bg-dark); font-weight: bold; font-size: 0.7rem; padding: 4px 30px; transform: rotate(45deg); text-transform: uppercase;">Most Popular</div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div>
+                <h3 style="color: var(--primary); text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);">Genius Pro</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.2rem;">For serious developers and agencies.</p>
+              </div>
+            </div>
+            <div style="font-size: 2.5rem; font-weight: 800; font-family: 'Outfit'; margin-bottom: 1.5rem; color: white;">$9.99<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400;">/mo</span></div>
+            <ul style="list-style: none; padding: 0; margin-bottom: 2rem; color: var(--text-main); font-size: 0.95rem;">
+              <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Unlimited API Requests</li>
+              <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Priority 24/7 Support</li>
+              <li style="margin-bottom: 0.5rem; font-weight: 600;"><i class="fa-solid fa-check" style="color: var(--primary); margin-right: 8px;"></i> Full Access to Genius AI</li>
+            </ul>
+            <a href="#" onclick="alert('Connect your Stripe Payment Link here!'); return false;" class="btn btn-primary" style="width: 100%; text-align: center; display: block;"><i class="fa-solid fa-bolt" style="margin-right: 5px;"></i> Upgrade to Pro</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Organizations Tab -->
+      <section id="tab-organizations" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>Organizations</h2>
+          <p>Collaborate with your team.</p>
+        </div>
+        <div class="dash-card" style="text-align: center; padding: 4rem 2rem;">
+          <i class="fa-solid fa-users" style="font-size: 3rem; color: var(--border-light); margin-bottom: 1rem;"></i>
+          <h3>You aren't in any organizations yet.</h3>
+          <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Create an organization to share API keys and billing with your team.</p>
+          <button class="btn btn-primary">Create Organization</button>
+        </div>
+      </section>
+
+      <!-- Invite Friends Tab -->
+      <section id="tab-invite" class="tab-pane fade-in">
+        <div class="dash-header">
+          <h2>Invite Friends</h2>
+          <p>Earn rewards by inviting developers to Technet.</p>
+        </div>
+        <div class="dash-card">
+          <h3>Your Referral Link</h3>
+          <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+            <input type="text" class="form-input" value="https://technet.org.zw/r/u1928" readonly style="flex: 1;">
+            <button class="btn btn-primary" onclick="alert('Link copied!')">Copy</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+  
+  <script src="firebase-config.js"></script>
+  <script src="main.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
+
+
+
+
+
+

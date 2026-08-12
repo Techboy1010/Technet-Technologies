@@ -1,0 +1,218 @@
+/* Dashboard Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 72px);
+}
+
+.dash-sidebar {
+  width: 260px;
+  background: rgba(9, 9, 11, 0.4);
+  border-right: 1px solid var(--border-light);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-group h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.dash-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.6rem 1rem;
+  color: var(--text-muted);
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  margin-bottom: 4px;
+}
+
+.dash-link:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-main);
+}
+
+.dash-link.active {
+  background: rgba(59, 130, 246, 0.15);
+  color: var(--primary);
+}
+
+.dash-content {
+  flex: 1;
+  padding: 3rem;
+  max-width: 1000px;
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.dash-header {
+  margin-bottom: 2rem;
+}
+
+.dash-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.dash-header p {
+  color: var(--text-muted);
+}
+
+.dash-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.profile-avatar-large {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* API Key UI */
+.api-key-box {
+  display: flex;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 0.5rem;
+  align-items: center;
+  gap: 1rem;
+}
+.api-key-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: monospace;
+  font-size: 1rem;
+  outline: none;
+}
+
+.api-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37, 211, 102, 0.1);
+  color: #25d366;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25d366;
+}
+
+/* Achievements */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+.achievement-badge {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+.achievement-badge:hover {
+  transform: translateY(-5px);
+}
+.achievement-badge i {
+  font-size: 2.5rem;
+}
+.achievement-badge.locked {
+  opacity: 0.4;
+  filter: grayscale(100%);
+}
+
+/* DevCard */
+.devcard-preview {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--bg-dark);
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+}
+.devcard-inner {
+  width: 350px;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+.devcard-inner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+}
+
+/* Analytics */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.stat-card {
+  padding: 1.5rem;
+}
+.stat-card h4 {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+.stat-card h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.positive { color: #25d366; font-size: 0.85rem; font-weight: 500; }
+.negative { color: #ff4757; font-size: 0.85rem; font-weight: 500; }
+
+@media (max-width: 768px) {
+  .dashboard-layout { flex-direction: column; }
+  .dash-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--border-light); padding: 1rem; }
+  .dash-content { padding: 1.5rem; }
+}
