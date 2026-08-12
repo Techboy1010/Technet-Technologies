@@ -183,14 +183,14 @@ async function sendWidgetMsg() {
   try {
     const formData = new FormData();
     formData.append('userText', text);
-    formData.append('charID', '1f89b894-0014-11ef-aee2-42010a7be00e');
+    formData.append('charID', '424e6fcc-9668-11f1-9835-42010a7be02f');
     formData.append('sessionID', convaiSessionID);
     formData.append('voiceResponse', 'False');
 
     const res = await fetch('https://api.convai.com/character/getResponse', {
       method: 'POST',
       headers: {
-        'CONVAI-API-KEY': 'e25bc6505b329c46e3ed701058560b50'
+        'CONVAI-API-KEY': 'e108a73cfd025a3fc39a0298a550e1b7'
       },
       body: formData
     });
